@@ -1,6 +1,6 @@
 # Spezifikation: Vorläufige Preop Arbeitslisten AN-Sekretariat und POPS
 
-Skizze v0.1 · Jochen · 16.06.2026
+Skizze v0.1 · JE · 16.06.2026
 
 ## Vorhaben
 
