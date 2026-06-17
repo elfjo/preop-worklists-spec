@@ -47,32 +47,32 @@ Wird als .csv geliefert. Siehe Appendix. Ingest via Pipeline, wenn möglich.
 - Ein Record je FID (o.ä. Identifier).
 - `manuell` = nutzerseitig editierbar, bleibt beim Daten-Refresh erhalten.
 
-| feld                        | anzeige      | typ                                     | quelle         | art        | bemerkung                                                    |
-| --------------------------- | ------------ | --------------------------------------- | -------------- | ---------- | ------------------------------------------------------------ |
-| fid                         | FID          | Text                                    | Docbox / M-KIS | ingest     | Primärschlüssel                                              |
-| anmelde_dt                  | Angemeldet   | dd.mm.yy                                | Docbox         | ingest     |                                                              |
-| angemeldet_seit_d           | Angem. (d)   | Integer                                 | berechnet      | abgeleitet | Kalendertage Anmeldung bis heute                             |
-| eingriff_dt                 | Eingriff     | dd.mm.yy                                | M-KIS / Docbox | ingest     | M-KIS führend                                                |
-| vorlauf_d                   | Vorlauf (d)  | Integer                                 | berechnet      | abgeleitet | Kalendertage heute bis Eingriff                              |
-| patient_name                | Name         | Text                                    | Docbox         | ingest     | Personendaten                                                |
-| geburts_dt                  | Geburtsdatum | dd.mm.yyyy                              | Docbox         | ingest     | Personendaten                                                |
-| patient_alter               | Alter        | Integer                                 | berechnet      | abgeleitet | Stichtag Eingriffsdatum                                      |
-| chop                        | CHOP         | Text                                    | Docbox         | ingest     | Anmelde-CHOP                                                 |
-| chop_text                   | CHOP-Text    | Text                                    | Katalog        | abgeleitet | Lookup über chop                                             |
-| operateur                   | Operateur    | Text                                    | Docbox         | ingest     |                                                              |
-| operateur_bemerkung         | Op-Bemerkung | Text                                    | Docbox         | ingest     | Keine Ahnung wie das in der Docbox heisst                    |
-| operateur_preop_wunsch_flag | Op-Wunsch    | Boolean                                 | Docbox         | ingest     | wünscht AN-Sprechstunde. Feld aus der Docbox soviel ich weiss |
-| an_inklusion                | Inkl.-Grund  | Enum: liste, wunsch_chir, pops_ad_an    | berechnet      | abgeleitet | liste = an_marker_pbm und Alter; wunsch_chir = operateur_preop_wunsch_flag; pops_ad_an = von POPS zugewiesen |
-| an_status                   | Status       | Enum: inbox, bearbeitung, erledigt      | Anwender       | manuell    | Default inbox                                                |
-| an_pfad                     | Pfad         | Enum: na, an_phys, an_tel, an_phys_pops | Anwender       | manuell    | Default na                                                   |
-| an_termin_dt                | Termin       | dd.mm.yyyy                              | Anwender       | manuell    | vorläufiger SS-Termin                                        |
-| an_ad_pops_flag             | →POPS        | Boolean                                 | Anwender       | manuell    | AN übergibt als Solo-POPS                                    |
-| an_bemerkung                | Bemerkung    | Text                                    | Anwender       | manuell    |                                                              |
-| pops_inklusion              | Inkl.-Grund  | Enum: liste, an_solo, an_gemeinsam      | berechnet      | abgeleitet | liste = pops_marker; an_solo = an_ad_pops_flag; an_gemeinsam = an_pfad an_phys_pops |
-| pops_status                 | Status       | Enum: inbox, bearbeitung, erledigt      | Anwender       | manuell    | Default inbox                                                |
-| pops_pfad                   | Pfad         | Enum: na, pops_phys, pops_tel           | Anwender       | manuell    | Default na, Werte zu definieren                              |
-| pops_ad_an_flag             | →AN          | Boolean                                 | Anwender       | manuell    | POPS weist der AN-Sprechstunde zu                            |
-| pops_bemerkung              | Bemerkung    | Text                                    | Anwender       | manuell    |                                                              |
+| feld                        | anzeige        | typ                                     | quelle         | art        | bemerkung                                                    |
+| --------------------------- | -------------- | --------------------------------------- | -------------- | ---------- | ------------------------------------------------------------ |
+| fid                         | FID            | Text                                    | Docbox / M-KIS | ingest     | Primärschlüssel                                              |
+| anmelde_dt                  | Angemeldet     | dd.mm.yy                                | Docbox         | ingest     |                                                              |
+| angemeldet_seit_d           | Angem. (d)     | Integer                                 | berechnet      | abgeleitet | Kalendertage Anmeldung bis heute                             |
+| eingriff_dt                 | Eingriff       | dd.mm.yy                                | M-KIS / Docbox | ingest     | M-KIS führend                                                |
+| vorlauf_d                   | Vorlauf (d)    | Integer                                 | berechnet      | abgeleitet | Kalendertage heute bis Eingriff                              |
+| patient_name                | Name           | Text                                    | Docbox         | ingest     | Personendaten                                                |
+| geburts_dt                  | Geburtsdatum   | dd.mm.yyyy                              | Docbox         | ingest     | Personendaten                                                |
+| patient_alter               | Alter          | Integer                                 | berechnet      | abgeleitet | Stichtag Eingriffsdatum                                      |
+| chop                        | CHOP           | Text                                    | Docbox         | ingest     | Anmelde-CHOP                                                 |
+| chop_text                   | CHOP-Text      | Text                                    | Katalog        | abgeleitet | Lookup über chop                                             |
+| operateur                   | Operateur      | Text                                    | Docbox         | ingest     |                                                              |
+| operateur_bemerkung         | Chir-Bemerkung | Text                                    | Docbox         | ingest     | Keine Ahnung wie das in der Docbox heisst                    |
+| operateur_preop_wunsch_flag | Chir-Wunsch    | Boolean                                 | Docbox         | ingest     | wünscht AN-Sprechstunde. Feld aus der Docbox soviel ich weiss |
+| an_inklusion                | Inkl.-Grund    | Enum: liste, wunsch_chir, pops_ad_an    | berechnet      | abgeleitet | liste = an_marker_pbm und Alter; wunsch_chir = operateur_preop_wunsch_flag; pops_ad_an = von POPS zugewiesen |
+| an_status                   | Status         | Enum: inbox, bearbeitung, erledigt      | Anwender       | manuell    | Default inbox                                                |
+| an_pfad                     | Pfad           | Enum: na, an_phys, an_tel, an_phys_pops | Anwender       | manuell    | Default na                                                   |
+| an_termin_dt                | Termin         | dd.mm.yyyy                              | Anwender       | manuell    | vorläufiger SS-Termin                                        |
+| an_ad_pops_flag             | →POPS          | Boolean                                 | Anwender       | manuell    | AN übergibt als Solo-POPS                                    |
+| an_bemerkung                | Bemerkung      | Text                                    | Anwender       | manuell    |                                                              |
+| pops_inklusion              | Inkl.-Grund    | Enum: liste, an_solo, an_gemeinsam      | berechnet      | abgeleitet | liste = pops_marker; an_solo = an_ad_pops_flag; an_gemeinsam = an_pfad an_phys_pops |
+| pops_status                 | Status         | Enum: inbox, bearbeitung, erledigt      | Anwender       | manuell    | Default inbox                                                |
+| pops_pfad                   | Pfad           | Enum: na, pops_phys, pops_tel           | Anwender       | manuell    | Default na, Werte zu definieren                              |
+| pops_ad_an_flag             | →AN            | Boolean                                 | Anwender       | manuell    | POPS weist der AN-Sprechstunde zu                            |
+| pops_bemerkung              | Bemerkung      | Text                                    | Anwender       | manuell    |                                                              |
 
 Die Teams haben überlappende und jeweils eigene Patientenpopulationen.
 
