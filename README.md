@@ -20,7 +20,7 @@ Skizze v0.1 · Jochen · 16.06.2026
 flowchart TB
   subgraph Sources
     A[Docbox Anmeldedaten<br>kommende 10 Wochen]
-    B[SAP oder M-KIS Falldaten]
+    B[SAP oder M-KIS Falldaten??]
     C["ST_Preop_Filterliste (.csv)"]
   end
   A --> I
