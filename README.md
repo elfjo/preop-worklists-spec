@@ -50,12 +50,12 @@ Wird als .csv geliefert. Siehe Appendix. Ingest via Pipeline, wenn möglich.
 | feld                        | anzeige        | typ                                     | quelle         | art        | bemerkung                                                    |
 | --------------------------- | -------------- | --------------------------------------- | -------------- | ---------- | ------------------------------------------------------------ |
 | fid                         | FID            | Text                                    | Docbox / M-KIS | ingest     | Primärschlüssel                                              |
-| anmelde_dt                  | Angemeldet     | dd.mm.yy                                | Docbox         | ingest     |                                                              |
+| anmelde_dt                  | Angemeldet     | dd.mm.yyyy                              | Docbox         | ingest     |                                                              |
 | angemeldet_seit_d           | Angem. (d)     | Integer                                 | berechnet      | abgeleitet | Kalendertage Anmeldung bis heute                             |
-| eingriff_dt                 | Eingriff       | dd.mm.yy                                | M-KIS / Docbox | ingest     | M-KIS führend                                                |
+| eingriff_dt                 | Eingriff       | dd.mm.yyyy                              | M-KIS / Docbox | ingest     | M-KIS führend                                                |
 | vorlauf_d                   | Vorlauf (d)    | Integer                                 | berechnet      | abgeleitet | Kalendertage heute bis Eingriff                              |
 | patient_name                | Name           | Text                                    | Docbox         | ingest     | Personendaten                                                |
-| geburts_dt                  | Geburtsdatum   | dd.mm.yyyy                              | Docbox         | ingest     | Personendaten                                                |
+| geburtsdatum_dt             | Geburtsdatum   | dd.mm.yyyy                              | Docbox         | ingest     | Personendaten                                                |
 | patient_alter               | Alter          | Integer                                 | berechnet      | abgeleitet | Stichtag Eingriffsdatum                                      |
 | chop                        | CHOP           | Text                                    | Docbox         | ingest     | Anmelde-CHOP                                                 |
 | chop_text                   | CHOP-Text      | Text                                    | Katalog        | abgeleitet | Lookup über chop                                             |
